@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Página con lluevia</title>
+	<style>
+		body{
+			background-color: black;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="mi-canvas"></canvas>
+	<script src="snowflakes.js"></script>
+	<script>
+		var canvas = document.getElementById('mi-canvas');
+		canvas.width = window.screen.availWidth;
+		canvas.height = window.screen.availHeight;
+
+		var imagen = new Image();
+		imagen.onload = function(){
+			var rain = new Rain("mi-canvas", imagen);
+			rain.let_it_snow();
+		};
+		imagen.src = "snowflake.png";
+	</script>
+</body>
+</html>
